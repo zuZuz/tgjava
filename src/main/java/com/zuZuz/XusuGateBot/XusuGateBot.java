@@ -90,7 +90,7 @@ public class XusuGateBot extends TelegramLongPollingBot {
             try {
                 SendMessage msg = new SendMessage()
                         .setChatId(chatId)
-                        .setText(xusuMessage.getText());
+                        .setText(new String(xusuMessage.getText().getBytes("UTF-8"), "cp866"));
                 logger.info(xusuMessage.getText());
                 execute(msg);
             } catch (Exception e) {
